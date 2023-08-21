@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+This is the index page
+
+
+{% endblock %}
+
+{% block css_files%}
+<link rel="stylesheet" href="{% static "blog/posts.css" %}">
+<link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock %}
+
+{% block content %}
+<h1>This is the Index page</h1>
+
+<section id="welcome">
+    <header>
+        <img src="{% static "blog/max1.png" %}" alt="Pabs - the author of this Blog">
+    </header>
+    <h2>Pabs Blog</h2>
+    <p>Hi  I am Pabs I am an Ancient on dota 2 and a network engineer</p>
+</section>
+<section id="latest-posts">
+<h2>My Latest Thoughts</h2>
+    <ul>
+        {% for post in posts %}
+        {% include "C:\Users\repabalan\Desktop\blog_project\my_site\blog\templates\includes\posts.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>I love programming, I love to help others and I enjoy exploring new technologies in general!</p>
+    <p>My goal is to keep on growing as a developer - and if I could help you do the same, I'd be very happy!</p>
+</section>
+{% endblock %}

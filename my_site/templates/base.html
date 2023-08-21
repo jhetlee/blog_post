@@ -1,0 +1,26 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static "app.css" %}">
+    {% block css_files %}
+
+    {% endblock %}
+    <title>{% block title %} Landing page {% endblock %}</title>
+
+</head>
+<body>
+    <header id="main-navigation">
+        <h1><a href="{% url "index" %}">Ricos Blog</a></h1>
+        <nav>
+            <a href="{% url "posts" %}">All Posts</a>
+        </nav>
+    </header>
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>
